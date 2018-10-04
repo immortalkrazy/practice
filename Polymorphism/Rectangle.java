@@ -1,7 +1,3 @@
-/**
- * From Chapter 11 in Liang Y Daniel, Introduction to Java Programming, 11st Edition
- */
-
 public class Rectangle extends GeometricObject {
   private double width;
   private double height;
@@ -9,12 +5,14 @@ public class Rectangle extends GeometricObject {
   public Rectangle() {
   }
 
-  public Rectangle(double width, double height) {
+  public Rectangle(
+      double width, double height) {
     this.width = width;
     this.height = height;
   }
 
-  public Rectangle(double width, double height, String color, boolean filled) {
+  public Rectangle(
+      double width, double height, String color, boolean filled) {
     this.width = width;
     this.height = height;
     setColor(color);

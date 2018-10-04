@@ -1,0 +1,13 @@
+et.setColor("blue");
+System.out.println("The color now is: " + et.getColor());
+System.out.println("Is it filled now: " + et.isFilled());
+/*print sides and area with perimeter*/
+
+
+/*method to print equilateral triangle*/
+public static void printEqTriangle(EquilateralTriangle etr){
+  System.out.println("EquilateralTriangle with the side:  "+
+  etr.getSide() +"\nHas an  area of : " +
+  Math.round(etr.getArea()*100)/100.00 +
+  "\nAnd perimeter of: " + etr.getParameter()+"\n");
+}

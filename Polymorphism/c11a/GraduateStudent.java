@@ -1,0 +1,3 @@
+class GraduateStudent extends Student{
+
+}
