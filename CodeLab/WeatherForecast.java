@@ -25,9 +25,4 @@ public class WeatherForecast{
   public int getLow(){
     return low;
   }
-
-
-
-
-
 }

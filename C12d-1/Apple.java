@@ -1,3 +1,4 @@
+import java.util.Objects;
 public class Apple extends Fruit{
   private String name = "Apple";
 
@@ -12,4 +13,16 @@ public class Apple extends Fruit{
   public String getApplePieRecipe(){
     return "This is apple pie recipe";
   }
+  public boolean equals(Object obj){
+    if (obj instanceof Apple){
+      return name.equals(((Apple)obj).name);
+    }
+    else {
+      return false;
+    }
+  }
+  public int hashCode(){
+    return Objects.hash(name);
+  }
+
 }
