@@ -8,7 +8,7 @@ public class Apple extends Fruit{
     super(s);
   }
   public String toString(){
-    return super.toString() + " called " + name;
+    return super.toString();
   }
   public String getApplePieRecipe(){
     return "This is apple pie recipe";

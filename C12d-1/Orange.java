@@ -10,7 +10,7 @@ public class Orange extends Fruit{
   }
 
   public String toString(){
-    return super.toString() + " called " + name;
+    return super.toString();
   }
   public String getOrangeJuiceRecipe(){
     return "This is orange juice recipe";

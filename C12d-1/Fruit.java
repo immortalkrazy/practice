@@ -19,7 +19,7 @@ public class Fruit{
     }
 
     public String toString(){
-      return super.toString() + ": This is a " + getName();
+      return super.toString();
     }
     public boolean equals(Object obj){
       if (obj instanceof Fruit){

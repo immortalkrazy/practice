@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class FruitClient{
   public static void main (String[]args){
 
@@ -61,12 +63,24 @@ public class FruitClient{
     /*Dynamic binding: which toString method is invoked by x is
     dependent on how the object was declared. In the print statemnet
     x refers to the particular object created not just any toString*/
-    m(new Fruit());           // new fruit object
+    m(new Fruit());           // it prints Fruit toString
     m(new Apple("{crisp}"));  // new apple with specified arg
     m(new Orange());          // new Orange object
     m(new GoldenDelicious()); //
     m(new McIntosh());        //
-  }
+
+    System.out.println("\n-------------------------------\n");
+    ArrayList<String> cityList = new ArrayList<String>();
+    cityList.add((new Fruit()).toString());
+    cityList.add((new Orange()).toString());
+    cityList.add((new Apple()).toString());
+    cityList.add((new Fruit()).toString());
+    //cityList.add("Paris");
+    //cityList.add("New York");
+    //cityList.add("Chicago");
+    //cityList.add("Tokyo");
+    System.out.println("cities: " +cityList.toString());
+  } ///////////////////////////////////////////main method brace
   // method to print referenced object
   public static void m(Fruit x){
     System.out.println(x.toString());

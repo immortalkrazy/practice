@@ -6,7 +6,7 @@ public final class McIntosh extends Apple{
 
   }
   public String toString(){
-    return super.toString() + " of type " + name;
+    return super.toString();
   }
   public boolean equals(Object obj){
     if (obj instanceof McIntosh){
