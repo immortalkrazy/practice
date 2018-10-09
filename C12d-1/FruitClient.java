@@ -7,12 +7,19 @@ public class FruitClient{
     Apple apple = new Apple();
     System.out.println(orange.getOrangeJuiceRecipe());
     System.out.println(apple.getApplePieRecipe());
+
+    System.out.println("------Inheretence------");
     /*Fruit g is greated and called getName method*/
     Fruit g = new Fruit("'gala'");
     System.out.println(g.getName());
+    Fruit t = new Apple("'Tonga'");
+    System.out.println(t.getName());
+    Fruit b = new Orange("'beem'");
+    System.out.println(b.getName());
+
 
     System.out.println("\n-----Polymorphism-----");
-    System.out.println("------Inheretence------");
+
     /*Polymirphism examples: all are created as Fruit but the
     later print statements show that f1....f5 are all different*/
     Fruit fOrg = new Orange();
@@ -70,16 +77,19 @@ public class FruitClient{
     m(new McIntosh());        //
 
     System.out.println("\n-------------------------------\n");
-    ArrayList<String> cityList = new ArrayList<String>();
-    cityList.add((new Fruit()).toString());
-    cityList.add((new Orange()).toString());
-    cityList.add((new Apple()).toString());
-    cityList.add((new Fruit()).toString());
+    ArrayList<Fruit> cityList = new ArrayList<Fruit>();
+    Fruit afr = new Fruit();
+    Orange aorg = new Orange();
+    cityList.add(afr);
+    cityList.add(aorg);
+    cityList.add(new Apple());
+    cityList.add(new Fruit());
+    System.out.println(aorg.equals(afr));
     //cityList.add("Paris");
     //cityList.add("New York");
     //cityList.add("Chicago");
     //cityList.add("Tokyo");
-    System.out.println("cities: " +cityList.toString());
+    System.out.println("cities: " +cityList);
   } ///////////////////////////////////////////main method brace
   // method to print referenced object
   public static void m(Fruit x){
