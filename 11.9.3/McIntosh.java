@@ -1,10 +1,14 @@
 public class McIntosh extends Apple{
-  private String name = "McIntosh";
+  private String name;
 
   public McIntosh(){
 
   }
+  public McIntosh(String name){
+    this.name = name;
+  }
   public String toString(){
-    return super.toString() + " of type " + name;
+    return "Class name is " + this.getClass().getName() +
+           "\nValue in variable name is " + name;
   }
 }

@@ -1,10 +1,14 @@
 public class GoldenDelicious extends Apple{
-  private String name = "GoldenDelicious";
+  private String name;
 
   public GoldenDelicious(){
 
   }
+  public GoldenDelicious(String name){
+    this.name = name;
+  }
   public String toString(){
-    return super.toString() + " of type " + name;
+    return "Class name is " + this.getClass().getName() +
+           "\nValue in variable name is " + name;
   }
 }

@@ -1,11 +1,11 @@
 public class Fruit{
-    private String name = "Fruit";
+    private String name;
 
     public Fruit(){
     }
     public Fruit(String name){
-      this.setName(name);
-      System.out.println("A new fruit added named: " + getName());
+      this.name = name;
+      //System.out.println("A new fruit added named: " + getName());
     }
     // protected final methods, specified constructor used
     // if specified fruit const. is used, name cannot be changed
@@ -13,11 +13,12 @@ public class Fruit{
       this.name = name;
     }
 
-    protected String getName(){
+    public String getName(){
       return this.name;
     }
 
     public String toString(){
-      return super.toString() + ": This is a " + getName();
+      return "Class name is " + "Fruit" +
+             "\nValue in Variable name is " + name;
     }
 }

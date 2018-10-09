@@ -1,30 +1,44 @@
 public class FruitClient{
   public static void main (String[]args){
 
-    Orange orange = new Orange();
-    Apple apple = new Apple();
+    Orange orange = new Orange("healthy");
+    Apple apple = new Apple("pink");
     System.out.println(orange.getOrangeJuiceRecipe());
     System.out.println(apple.getApplePieRecipe());
+
+    System.out.println("------Inheretence/Upcasting------");
     /*Fruit g is greated and called getName method*/
     Fruit g = new Fruit("'gala'");
     System.out.println(g.getName());
+    /*fruit created as apple and getName method from Fruit class*/
+    Fruit t = new Apple("Tonga");
+    // gives out a null value since it is getting that from fruit class
+    System.out.println(t.getName());
+    /*fruit created as orange and getName method from Fruit class*/
+    Fruit b = new Orange("beem");
+    System.out.println(b.getName());
+    // m created as McIntosh is using the setName
+    // method in Fruit class
+    Fruit m = new McIntosh("sweet");
+    m.setName("---Mike---");
+    System.out.println(m.getName());
 
     System.out.println("\n-----Polymorphism-----");
-    System.out.println("------Inheretence------");
+
     /*Polymirphism examples: all are created as Fruit but the
     later print statements show that f1....f5 are all different*/
-    Fruit fOrg = new Orange();
-    Fruit fApp = new Apple();
-    Fruit fMci = new McIntosh();
-    Fruit fGds = new GoldenDelicious();
-    Fruit fFrt = new Fruit();
+    Fruit fOrg = new Orange("tiny");// upcasting is done automatic
+    Fruit fApp = new Apple("green");// upcasting is done automatic
+    Fruit fMci = new McIntosh("slim");// upcasting is done automatic
+    Fruit fGds = new GoldenDelicious("beuty");// upcasting is done automatic
+    Fruit fFrt = new Fruit("pinapple");
     /*toString methos of Object class is also implemented
     in all the to string methods to show inheretence*/
-    System.out.println(fOrg.toString());
-    System.out.println(fApp.toString());
-    System.out.println(fMci.toString());
-    System.out.println(fGds.toString());
-    System.out.println(fFrt.toString());
+    System.out.println(fOrg.toString());//Polymorphism java knows to call to string method from orange
+    System.out.println(fApp.toString());//Polymorphism java knows to call to string method from apple
+    System.out.println(fMci.toString());//Polymorphism java knows to call to string method from McIntosh
+    System.out.println(fGds.toString());//Polymorphism java knows to call to string method from GoldenDelicious
+    System.out.println(fFrt.toString());//Polymorphism java knows to call to string method from Fruit
 
     System.out.println("\n-----Casting----- \n");
     printRecipe(fGds, "tang");
@@ -32,8 +46,28 @@ public class FruitClient{
     printRecipe(new Orange(), "Kinnu");
     Fruit cali = new Apple("cali");
     printRecipe(cali, "Cali");
-    //printRecipe(Fruit apple);
-    //printRecipe(Fruit apple);
+
+    GoldenDelicious dcGd = new GoldenDelicious("Delicious");
+    Fruit dcFt = dcGd;//upcasting to fruit
+    //testing if Fruit is GoldenDelicious
+    if (dcFt instanceof GoldenDelicious){
+      System.out.println("It is a GoldenDelicious I can safely downcast it to GoldenDelicious");
+      GoldenDelicious dc = (GoldenDelicious)dcFt;//casting
+    }
+    System.out.println(((GoldenDelicious)dcFt).toString());
+    /* Downcasting */
+    //
+    Fruit ft = new GoldenDelicious("Golden");
+    if (ft instanceof Apple){
+      Apple tap = (Apple)ft;
+      System.out.println(tap.toString());
+    }
+    /*This is an example of wrong casting*/
+    //Fruit wrong = new Orange();
+    //Apple wrong2 = (Apple)wrong;
+    //System.out.println(wrong);
+
+
 /*****************************************************************/
 
     System.out.println("");
@@ -61,11 +95,11 @@ public class FruitClient{
     /*Dynamic binding: which toString method is invoked by x is
     dependent on how the object was declared. In the print statemnet
     x refers to the particular object created not just any toString*/
-    m(new Fruit());           // new fruit object
-    m(new Apple("{crisp}"));  // new apple with specified arg
-    m(new Orange());          // new Orange object
-    m(new GoldenDelicious()); //
-    m(new McIntosh());        //
+    m(new Fruit("lemon"));           // new fruit object
+    m(new Apple("gala"));  // new apple with specified arg
+    m(new Orange("goli"));          // new Orange object
+    m(new GoldenDelicious("red")); //
+    m(new McIntosh("silver"));        //
   }
   // method to print referenced object
   public static void m(Fruit x){
@@ -90,5 +124,4 @@ public class FruitClient{
       System.out.println("Error");
     }
   }
-
 }
