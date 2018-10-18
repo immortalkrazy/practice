@@ -1,16 +1,15 @@
 import java.util.Objects;
 public class Fruit{
-    private String name = "Fruit";
+    // private variable name
+    private String name;
 
     public Fruit(){
     }
     public Fruit(String name){
-      this.setName(name);
-      System.out.println("A new fruit added named: " + getName());
+      this.name = name;
     }
-    // protected final methods, specified constructor used
-    // if specified fruit const. is used, name cannot be changed
-    protected final void setName(String name){
+
+    protected void setName(String name){
       this.name = name;
     }
 
@@ -19,8 +18,10 @@ public class Fruit{
     }
 
     public String toString(){
-      return super.toString();
+      return "Class name is:  " + "Fruit"
+             + "\nValue is the variable name is:  " + name;
     }
+
     public boolean equals(Object obj){
       if (obj instanceof Fruit){
         return name.equals(((Fruit)obj).name);
@@ -33,4 +34,5 @@ public class Fruit{
     public int hashCode(){
       return Objects.hash(name);
     }
+    
 }

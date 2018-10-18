@@ -1,118 +1,56 @@
 import java.util.ArrayList;
+import java.util.Random;
 
 public class FruitClient{
   public static void main (String[]args){
 
-    Orange orange = new Orange();
-    Apple apple = new Apple();
-    System.out.println(orange.getOrangeJuiceRecipe());
-    System.out.println(apple.getApplePieRecipe());
+    ArrayList<Fruit> fruitList = new ArrayList<>();
+    Fruit peach = new Fruit("peach");
+    Fruit mango = new Fruit("mango");
+    Fruit banana = new Fruit("banana");
+    Fruit navel = new Orange("navel");
+    Fruit orange = new Orange("orange");
+    Fruit tanger = new Orange ("tanger");
+    Fruit gala = new Apple("gala");
+    Fruit fuji = new Apple("fuji");
+    Fruit green = new Apple("green");
+    Fruit golden = new GoldenDelicious("golden");
+    Fruit delicious = new GoldenDelicious("delicious");
+    Fruit silver = new McIntosh("silver");
+    Fruit gray = new McIntosh("gray");
 
-    System.out.println("------Inheretence------");
-    /*Fruit g is greated and called getName method*/
-    Fruit g = new Fruit("'gala'");
-    System.out.println(g.getName());
-    Fruit t = new Apple("'Tonga'");
-    System.out.println(t.getName());
-    Fruit b = new Orange("'beem'");
-    System.out.println(b.getName());
+    fruitList.add(peach);
+    fruitList.add(mango);
+    fruitList.add(banana);
+    fruitList.add(navel);
+    fruitList.add(orange);
+    fruitList.add(tanger);
+    fruitList.add(gala);
+    fruitList.add(fuji);
+    fruitList.add(green);
+    fruitList.add(golden);
+    fruitList.add(delicious);
+    fruitList.add(silver);
+    fruitList.add(gray);
+    //System.out.println(peach.equals(mango));
+    //System.out.println(banana.hashCode());
+    //System.out.println(navel.hashCode());
+    //System.out.println(gray.hashCode());
+    //System.out.println("-------------------");
 
-
-    System.out.println("\n-----Polymorphism-----");
-
-    /*Polymirphism examples: all are created as Fruit but the
-    later print statements show that f1....f5 are all different*/
-    Fruit fOrg = new Orange();
-    Fruit fApp = new Apple();
-    Fruit fMci = new McIntosh();
-    Fruit fGds = new GoldenDelicious();
-    Fruit fFrt = new Fruit();
-    /*toString methos of Object class is also implemented
-    in all the to string methods to show inheretence*/
-    System.out.println(fOrg.toString());
-    System.out.println(fApp.toString());
-    System.out.println(fMci.toString());
-    System.out.println(fGds.toString());
-    System.out.println(fFrt.toString());
-
-    System.out.println("\n-----Casting----- \n");
-    printRecipe(fGds, "tang");
-    printRecipe(fOrg, "malta");
-    printRecipe(new Orange(), "Kinnu");
-    Fruit cali = new Apple("cali");
-    printRecipe(cali, "Cali");
-    //printRecipe(Fruit apple);
-    //printRecipe(Fruit apple);
-/*****************************************************************/
-
-    System.out.println("");
-
-    if (fApp instanceof Fruit){
-      System.out.println(" is an Apple");
-    }
-    else{
-      System.out.println(" is not Apple");
-    }
-    if (fFrt instanceof Fruit){
-      System.out.println(" is an Fruit");
-    }
-    else{
-      System.out.println(" is not Fruit");
-    }
-    if (fGds instanceof Apple){
-      System.out.println(" is an Apple");
-    }
-    else{
-      System.out.println(" is not Apple");
+    for (int i = 0; i < fruitList.size(); i++){
+      System.out.println(fruitList.get(i));
     }
 
-    System.out.println("\n-----Dyanamic Bonding----- \n");
-    /*Dynamic binding: which toString method is invoked by x is
-    dependent on how the object was declared. In the print statemnet
-    x refers to the particular object created not just any toString*/
-    m(new Fruit());           // it prints Fruit toString
-    m(new Apple("{crisp}"));  // new apple with specified arg
-    m(new Orange());          // new Orange object
-    m(new GoldenDelicious()); //
-    m(new McIntosh());        //
-
-    System.out.println("\n-------------------------------\n");
-    ArrayList<Fruit> cityList = new ArrayList<Fruit>();
-    Fruit afr = new Fruit();
-    Orange aorg = new Orange();
-    cityList.add(afr);
-    cityList.add(aorg);
-    cityList.add(new Apple());
-    cityList.add(new Fruit());
-    System.out.println(aorg.equals(afr));
-    //cityList.add("Paris");
-    //cityList.add("New York");
-    //cityList.add("Chicago");
-    //cityList.add("Tokyo");
-    System.out.println("cities: " +cityList);
-  } ///////////////////////////////////////////main method brace
-  // method to print referenced object
-  public static void m(Fruit x){
-    System.out.println(x.toString());
-  }
-  /*********CASTING******************/
-
-  public static void printRecipe(Fruit rFruit, String s){
-    System.out.println();
-
-    if (rFruit instanceof Orange){
-      Orange tempOrange = (Orange) rFruit;
-      System.out.println(tempOrange.getOrangeJuiceRecipe() +
-       " for " + s);
-    }
-    else if (rFruit instanceof Apple){
-      Apple tempApple = (Apple) rFruit;
-      System.out.println(tempApple.getApplePieRecipe() +
-       " for " + s);
-    }
-    else{
-      System.out.println("Error");
-    }
+    System.out.println("\n");
+    Fruit randomObject1 = fruitList.get(new Random().nextInt(fruitList.size()));
+    Fruit randomObject2 = fruitList.get(new Random().nextInt(fruitList.size()));
+    System.out.println("Hash Code for first random object:  " + randomObject1.hashCode());
+    System.out.println("Hash Code for first random object:  " + randomObject2.hashCode());
+    System.out.println("First  random obeject from array: \n" + randomObject1);
+    System.out.println("Second random obeject from array: \n" + randomObject2);
+    //System.out.println(randomObject1.equals(randomObject1));
+    System.out.println("Objects are equal ? : " + randomObject1.equals(randomObject2));
   }
 
 }
