@@ -14,6 +14,7 @@ public class Email {
     this.firstName = setFirstName();
     this.lastName = setLastName();
     this.department = setDepartment();
+    this.password = setPassword();
 
   }
 
@@ -52,6 +53,9 @@ public class Email {
 
   }
 
+  private String setPassword(){
+    
+  }
 
 
 }
