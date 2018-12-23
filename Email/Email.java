@@ -11,7 +11,7 @@ public class Email {
   private String password;
   private String department;
   private String email;
-  private int defaultPasswordLength = 10;
+  private int defaultPasswordLength = 16;
   private int mailboxCapacity = 500;
   private String alternateEmail;
   private String companySuffix = "company.com";
@@ -26,7 +26,7 @@ public class Email {
             department + "." + companySuffix;
     System.out.println("Your email is: " + email);
     System.out.println("and  Password: " + this.password);
-    
+
   }
 
   private String setFirstName(){
