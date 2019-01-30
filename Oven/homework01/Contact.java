@@ -45,8 +45,15 @@ public class Contact implements Comparable<Contact>, Serializable{
     this.lastName = lastName;
   }
 
+  @Override
+  //Override compareTo metho
   public int compareTo(Contact c){
     return 1;
+  }
+
+  @Override
+  public String toString(){
+    return "Name: " + getFirstName() + " " + getLastName()
   }
 
 }
