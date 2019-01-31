@@ -16,7 +16,7 @@ public class Contact implements Comparable<Contact>, Serializable{
 
   }
 
-  // constructor with all the information
+  // constructor with all the data fields (information)
   public Contact (String firstName, String lastName, String phoneNumber,
                   String address, String city, String state){
 
@@ -45,15 +45,67 @@ public class Contact implements Comparable<Contact>, Serializable{
     this.lastName = lastName;
   }
 
+  public void setPhoneNumber(String phoneNumber){
+    this.phoneNumber = phoneNumber;
+  }
+
+  public void setAddress(String address){
+    this.address = address;
+  }
+
+  public void setCity(String city){
+    this.city = city;
+  }
+
+  public void setState(String state){
+    this.state = state;
+  }
+
+  // getter methods for all the data fields
+  public String getFirstName(){
+    return firstName;
+  }
+
+  public String getLastName(){
+    return lastName;
+  }
+
+  public String getPhoneNumber(){
+    return phoneNumber;
+  }
+
+  public String getAddress(){
+    return address;
+  }
+
+  public String getCity(){
+    return city;
+  }
+
+  public String getState(){
+    return state;
+  }
+
+  public boolean equals(Object obj){
+    return true;
+  }
   @Override
   //Override compareTo metho
-  public int compareTo(Contact c){
-    return 1;
+  public int compareTo(Contact other){
+    if (getLastName().compareTo(other.getLastName()) > 0)
+      return 1;
+    else if (getLastName().compareTo(other.getLastName()) < 0)
+      return -1;
+    else if (getLastName().compareTo(other.getLastName()) == 0
+            && getFirstName().compareTo(other.getFirstName()) == 0)
+      return 0;
+    else
+      return 7;
   }
 
   @Override
   public String toString(){
-    return "Name: " + getFirstName() + " " + getLastName()
+    return "Name: " + getFirstName() + " " + getLastName();
   }
 
 }
