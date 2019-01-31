@@ -1,6 +1,6 @@
 import java.io.Serializable;
-import java.io.*;
-import java.util.*;
+//import java.io.*;
+//import java.util.*;
 
 public class Contact implements Comparable<Contact>, Serializable{
   //
@@ -53,7 +53,7 @@ public class Contact implements Comparable<Contact>, Serializable{
 
   @Override
   public String toString(){
-    return "Name: " + getFirstName() + " " + getLastName()
+    return "Name: " + getFirstName() + " " + getLastName();
   }
 
 }
