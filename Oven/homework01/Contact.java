@@ -45,6 +45,12 @@ public class Contact implements Comparable<Contact>, Serializable{
     this.lastName = lastName;
   }
 
+  public void setPhoneNumber(){
+    this.phoneNumber = phoneNumber;
+  }
+
+  
+
   public int compareTo(Contact c){
     return 1;
   }
