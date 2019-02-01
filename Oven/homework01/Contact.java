@@ -86,12 +86,31 @@ public class Contact implements Comparable<Contact>, Serializable{
     return state;
   }
 
-  public boolean equals(Object other){
+  // Override the Object class equals method
+  public boolean equals(Object obj){
+    // if comparing with the same object
+    if (this == obj)
+      return true;
+    // if object is not properly created
+    if (obj == null)
+      return false;
+    // in case, not the class member
+    if (this.getClass() != obj.getClass())
+      return false;
+    // casting
+    Contact other = (Contact)obj;
+    // check against the last name
+    if(!this.lastName.equals(other.lastName))
+      return false;
+    // check against the first name
+    else if(!this.firstName.equals(other.firstName))
+      return false;
+    // if gone through all the tests
     return true;
   }
 
   @Override
-  //Override compareTo metho
+  // Override compareTo method from interface Comparable
   public int compareTo(Contact other){
     if (getLastName().compareTo(other.getLastName()) > 0)
       return 1;
