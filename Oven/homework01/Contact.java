@@ -86,9 +86,10 @@ public class Contact implements Comparable<Contact>, Serializable{
     return state;
   }
 
-  public boolean equals(Object obj){
+  public boolean equals(Object other){
     return true;
   }
+
   @Override
   //Override compareTo metho
   public int compareTo(Contact other){
@@ -96,11 +97,12 @@ public class Contact implements Comparable<Contact>, Serializable{
       return 1;
     else if (getLastName().compareTo(other.getLastName()) < 0)
       return -1;
-    else if (getLastName().compareTo(other.getLastName()) == 0
-            && getFirstName().compareTo(other.getFirstName()) == 0)
-      return 0;
+    else if (getFirstName().compareTo(other.getFirstName()) > 0)
+      return 1;
+    else if (getFirstName().compareTo(other.getFirstName()) < 0)
+      return -1;
     else
-      return 7;
+      return 0;
   }
 
   @Override
