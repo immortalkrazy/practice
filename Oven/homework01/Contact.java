@@ -3,7 +3,7 @@ import java.io.Serializable;
 //import java.util.*;
 
 public class Contact implements Comparable<Contact>, Serializable{
-  //
+  // private data fields
   private String firstName;
   private String lastName;
   private String phoneNumber;
@@ -112,21 +112,25 @@ public class Contact implements Comparable<Contact>, Serializable{
   @Override
   // Override compareTo method from interface Comparable
   public int compareTo(Contact other){
+    // compare last names
     if (getLastName().compareTo(other.getLastName()) > 0)
       return 1;
     else if (getLastName().compareTo(other.getLastName()) < 0)
       return -1;
+    // compare first names
     else if (getFirstName().compareTo(other.getFirstName()) > 0)
       return 1;
     else if (getFirstName().compareTo(other.getFirstName()) < 0)
       return -1;
+    // if both match
     else
       return 0;
   }
-
+  // override the toString method
   @Override
   public String toString(){
-    return "Name: " + getFirstName() + " " + getLastName();
+    return "\n" + getFirstName() + " " + getLastName() + "     Phone number: " +
+    getPhoneNumber() + "\n" + getAddress() + "\n" + getCity() + ", " + getState();
   }
 
 }
