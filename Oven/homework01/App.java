@@ -2,7 +2,7 @@ public class App{
   public static void main (String []args){
 
     // create a contact using default constructor with no data fields
-    Contact contact1 = new Contact();
+    Contact c = new Contact();
     System.out.println("This the the object with no data fields\n" + contact1);
 
     // create 2 contacts with the same data fiels
@@ -13,6 +13,10 @@ public class App{
     // comparing the two contacts if they are equals
     printWithPriority(contact2, contact5);
     System.out.println(contact2.compareTo(contact5));
+
+    System.out.println(contact2);
+    c.updateInfo(contact2);
+    System.out.println(contact2);
 
   }
 
