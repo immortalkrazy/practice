@@ -85,31 +85,6 @@ public class Contact implements Comparable<Contact>, Serializable{
   public String getState(){
     return state;
   }
-  // update information of the Object
-  public void updateInfo(Contact c){
-    try(Scanner sc = new Scanner(System.in)){
-      System.out.println("Please enter the First Name: ");
-      String fN = sc.nextLine();
-      c.setFirstName(fN);
-      System.out.println("Please enter the Last  Name: ");
-      String lN = sc.nextLine();
-      c.setLastName(lN);
-      System.out.println("Please enter  Phone  Number: ");
-      String ph = sc.nextLine();
-      c.setPhoneNumber(ph);
-      System.out.println("Please enter sreeet Address: ");
-      String ad = sc.nextLine();
-      c.setAddress(ad);
-      System.out.println("Please enter the       City: ");
-      String ct = sc.nextLine();
-      c.setCity(ct);
-      System.out.println("Please enter the      State: ");
-      String st = sc.nextLine();
-      c.setState(st);
-    }catch(InputMismatchException e){
-      System.out.println(e.getMessage());
-    }
-  }
 
   @Override
   // Override the Object class equals method
@@ -145,9 +120,9 @@ public class Contact implements Comparable<Contact>, Serializable{
       return -1;
     // compare first names
     else if (getFirstName().compareTo(other.getFirstName()) > 0)
-      return 1;
+      return 2;
     else if (getFirstName().compareTo(other.getFirstName()) < 0)
-      return -1;
+      return -2;
     // if both match
     else
       return 0;
@@ -155,8 +130,8 @@ public class Contact implements Comparable<Contact>, Serializable{
   // override the toString method
   @Override
   public String toString(){
-    return "\n" + getFirstName() + " " + getLastName() + " \t Phone number: " +
-    getPhoneNumber() + "\n" + getAddress() + "\n" + getCity() + ", " + getState();
+    return "\n" + getLastName() + ", " + getFirstName() + " \t Phone number: " +
+    getPhoneNumber() + "\n" + getAddress() + "\n" + getCity() + ", " + getState() + "\n";
   }
 
 }
