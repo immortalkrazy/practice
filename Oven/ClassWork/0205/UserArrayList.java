@@ -23,11 +23,11 @@ public class UserArrayList{
 
   }
 
-  private static int sumAll(ArrayList list){
+  private static int sumAll(ArrayList<Integer> list){
     int total = 0;
     for (int i = 0; i < list.size(); i++){
-      int b = (int)list.get(i);
-      total+=b;
+      //int b = (int)list.get(i);
+      total+= list.get(i);
     }
     return total;
   }
