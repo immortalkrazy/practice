@@ -9,7 +9,7 @@ public class OurArrayList <E> {
       numElements  = 0;
       arr = (E[])new Object[20];
   }
-
+  // add an element to the array
   public boolean add (E e){
     // check if the size is avaialable
     if (numElements == arr.length) {
@@ -32,24 +32,25 @@ public class OurArrayList <E> {
     // now rename temp array to the actual arraylist
     arr = temp;
   }
-
+  // get the size of the current array
   public int size(){
       return numElements;
   }
-
+  // check if array is empty
   public boolean empty(){
     return numElements == 0;
   }
 
   //public boolean remove(Object obj);
 
+  // get the element in the array from a specific index
   public E get(int index){
     if(index >= numelements || index < 0){
       throw new IndexOutOfBoundsException();
     }
     return arr[index];
   }
-  //
+  // set a certain value at a certain index
   public E set(int index, E value){
     if (index < 0 || index >= numElements){
       throw new IndexOutOfBoundsException();
@@ -68,6 +69,6 @@ public class OurArrayList <E> {
   //
   // public boolean equals(Object obj);
   //
-  // public int indexOF();
+  // public int indexOF(Object obj);
 
 }// end of class
