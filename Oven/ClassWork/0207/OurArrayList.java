@@ -45,7 +45,7 @@ public class OurArrayList <E> {
 
   // get the element in the array from a specific index
   public E get(int index){
-    if(index >= numelements || index < 0){
+    if(index >= numElements || index < 0){
       throw new IndexOutOfBoundsException();
     }
     return arr[index];
