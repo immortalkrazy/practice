@@ -9,7 +9,7 @@ public class OurArrayList <E> implements Iterable<E> {
     public OurArrayIterator() {
       index = 0;
     }
-
+    // iterator to check if there is next element
     public boolean hasNext() {
       return index < numElements;
     }
@@ -23,9 +23,9 @@ public class OurArrayList <E> implements Iterable<E> {
       throw new UnsupportedOperationException();
       //remove(index - 1);
     }
-  }// end of class
+  }// end Iterator of class
 
-
+  // private data fields for OurArrayList class
   private E[] arr;
   private int numElements;
 
@@ -165,6 +165,10 @@ public class OurArrayList <E> implements Iterable<E> {
       list.add(i);
     }
 
-  }
+    for (int i = 0; i < 10; i++){
+      System.out.print(list.get(i) + " ");
+    }
+
+  }// end of main
 
 }// end of class
