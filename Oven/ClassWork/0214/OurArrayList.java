@@ -156,19 +156,53 @@ public class OurArrayList <E> implements Iterable<E> {
     return result;
   }
 
+
+  // tests for our arraylist
   public static void main(String[] args) {
 
     OurArrayList<Integer> list;
     list = new OurArrayList<>();
 
+    OurArrayList<String> listS = new OurArrayList<>();
+
+    listS.add("hello");
+    listS.add("World");
+    listS.add("!");
+
     for (int i = 0; i < 10; i++){
       list.add(i);
     }
+    list.printList(list);
 
-    for (int i = 0; i < 10; i++){
-      System.out.print(list.get(i) + " ");
-    }
+    list.add(3, 5);
+    list.printList(list);
+
+    list.add(32);
+    list.printList(list);
+
+    System.out.println("if the arraylist contains 5: " + list.contains(5));
+    System.out.println("if the arraylist contains 45: " + list.contains(45));
+
+    list.clear();
+    list.printList(list);
+
+    list.printList(listS);
+
+    list.remove(10);
+    list.printList(list);
+
 
   }// end of main
+
+  public void printList(OurArrayList list){
+    if (list.size() == 0){
+      System.out.println("Arraylist is empty");
+    }
+    System.out.println();
+    for (int i = 0; i < list.size(); i++){
+      System.out.print(list.get(i) + " ");
+    }
+    System.out.println();
+  }
 
 }// end of class
