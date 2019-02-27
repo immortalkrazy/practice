@@ -1,4 +1,10 @@
-public class SListNode {
+import java.util.*;
+
+public class OurLinkedList<E> {
+
+  private DListNode head;
+  private DListNode tail;
+  private int numElements;
 
   private static class DListNode<E> {
     public DListNode next;
@@ -9,6 +15,7 @@ public class SListNode {
       head = null;
       tail = null;
     }
+  }
 
   public void addLast (E data) {
 
@@ -25,12 +32,12 @@ public class SListNode {
   public E removeLast() {
 
     if (tail == null) {
-      throw new NoSuchElementException;
+      throw new NoSuchElementException();
     }
     E old = tail.data;
     if (numElements == 1) {
-      head == null;
-      tail == null;
+      head = null;
+      tail = null;
     }
     else {
       tail = tail.prev;
@@ -48,8 +55,8 @@ public class SListNode {
     if (index == size() - 1){
       return removeLast();
     }
-    DlistNode<E> nodeToRemove = advanceTo(index);
-    E old = nodeToRemove.dada;
+    DListNode<E> nodeToRemove = advanceTo(index);
+    E old = nodeToRemove.data;
     nodeToRemove.prev.next = nodeToRemove.next;
     nodeToRemove.next.prev = nodeToRemove.prev;
 
