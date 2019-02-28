@@ -4,19 +4,19 @@ import java.util.List;
 
 public class ContactList <Contact> implements Iterable<Contact> {
 
-  List<Contact> contactList = new ArrayList<Contact>();
+  private List<Contact> contactList;
 
   @Override
   public Iterator<Contact> iterator() {
-    return new CustomIterator<Contact>(contactList);
+    return new ContactIterator<Contact>(contactList);
   }
 
-  public class CustomIterator<E> implements Iterator<E> {
+  public class ContactIterator<Contact> implements Iterator<Contact> {
 
     private int indexPosition;
-    List<E> internalList;
+    List<Contact> internalList;
 
-    public CustomIterator(List<E> internalList) {
+    public ContactIterator(List<Contact> internalList) {
       this.internalList = internalList;
       indexPosition = 0;
     }
@@ -30,13 +30,29 @@ public class ContactList <Contact> implements Iterable<Contact> {
     }
 
     @Override
-    public E next() {
-      E val = internalList.get(indexPosition);
+    public Contact next() {
+      Contact contact = internalList.get(indexPosition);
       indexPosition++;
-      return val;
+      return contact;
     }
 
   } // end of custom iterator class
 
+  private Contact[] array;
+  private int numElements;
+
+  public ContactList() {
+    numElements = 0;
+    List<Contact> contactList = new ArrayList<Contact>();
+  }
+
+  // public Contactlist(Contact[] array){
+  //   numElements = 0;
+  //
+  // }
+
+  public int searchByLastName(String lastName){
+
+  }
 
 }// end of custom array clss

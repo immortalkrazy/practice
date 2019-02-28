@@ -1,24 +1,25 @@
-class Circle{
-  // The radius of the Circle
-  double radius = 1;
-  // Contruct a Circle Object
-  Circle(){
+public class Circle {
+
+
+  private final double PI = 3.14159;
+  private double radius;
+
+  public Circle() {
 
   }
-  // Contruct a Circle Object
-  Circle(double newRadius){
-    radius = newRadius;
+  public Circle(double radius){
+    this.radius = radius;
   }
-  // Return the Are of the Circle
-  double getArea(){
-    return radius * radius * Math.PI;
+
+  public double getRadius() {
+    return radius;
   }
-  // Return the Parameter of the Circle
-  double getPerimeter(){
-    return 2 * radius * Math.PI;
+
+  public void setRadius(double radius) {
+    this.radius = radius;
   }
-  // Set a new radius for this Circle
-  void setRadius(double newRadius){
-    radius = newRadius;
+
+  public double getArea() {
+    return radius * radius * PI;
   }
 }
