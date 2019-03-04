@@ -194,7 +194,4 @@ public class MyArrayList<E> implements Iterable<E> {
     return index < 0 || index > logicalLength;
   }
 
-
-
-
 }// end of class
