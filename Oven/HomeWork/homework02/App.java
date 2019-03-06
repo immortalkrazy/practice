@@ -77,6 +77,21 @@ public class App{
     updateInfo(c5);
     System.out.println("Contact info AFTER  update by user: \n" + c5);
 
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////
+    System.out.print("\n\n---------------------TWO----------------------\n\n");
+    ContactList<Contact> list = new ContactList<Contact>();
+    list.add(c1);
+    list.add(c2);
+    list.add(c3);
+    list.add(c4);
+    list.add(c5);
+    list.add(c6);
+
+    //System.out.println(list);
+    for (Contact k: list) {
+      System.out.println("name: " + k.getFirstName());
+    }
+
   }// end of main
 
   // update information of the Object with user input
