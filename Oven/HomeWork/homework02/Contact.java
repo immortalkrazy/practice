@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Contact implements Comparable<Contact>, Serializable{
   // private data fields
   private String firstName;
-  private String lastName;
+  public String lastName;
   private String phoneNumber;
   private String address;
   private String city;
