@@ -1,3 +1,5 @@
+import java.util.*;
+
 public interface MyList<E> extends Iterable<E> {
 
   public boolean add(E e);
@@ -14,5 +16,5 @@ public interface MyList<E> extends Iterable<E> {
   public E remove(int index);
   public boolean remove(Object obj);
   public int size();
-    
+
 }
