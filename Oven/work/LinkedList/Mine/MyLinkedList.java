@@ -2,11 +2,30 @@ import java.util.*;
 
 public class MyLinkedList <E> implements MyList<E> {
 
-    // private class MyLinkedListIterator implements Iterator<E> {
-    //
-    // }// end of Iterator class
+    private class MyLinkedListIterator implements Iterator<E> {
 
-    private static class DListNode<E> {
+      private DListNode<E> pointer;
+
+      public MyLinkedListIterator () {
+        pointer = head;
+      }
+      public E next() {
+        E old = pointer.getData();
+        pointer = pointer.getNext();
+        return old;
+      }
+      public boolean hasNext() {
+        return pointer != null;
+      }
+      public void remove() {
+        throw new UnsupportedOperationException();
+      }
+
+
+    }// end of Iterator class
+
+    private class DListNode<E> {
+
       private E data;
       private DListNode<E> previous;
       private DListNode<E> next;
@@ -44,6 +63,29 @@ public class MyLinkedList <E> implements MyList<E> {
 
     } // end of node class
 
+    // data fields for Linkedlist class
+    private DListNode<E> head;
+    private DListNode<E> tail;
+    private int logicalLength;
+    // constructor for Linked List class
+    public MyLinkedList () {
+      head = null;
+      tail = null;
+      logicalLength = 0;
+    }
+    public void addFirst(E e){
+      DListNode<E> temp = new DListNode<>(e, null, null);
+      if (head == null) {
+        head = temp;
+        tail = temp;
+      }
+      else {
+        temp.setNext(head);
+        temp.setPrevious(temp);
+        head = temp;
+      }
+      logicalLength++;
+    }
     public boolean add(E e) {
       return false;
     }
