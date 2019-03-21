@@ -7,7 +7,7 @@ public class StringLengthComparator implements Comparator<String> {
             int value = str1.length() - str2.length();
 
             if (value == 0) {
-                  return str.compareTo(str2);
+                  return str1.compareTo(str2);
             }
 
             else {

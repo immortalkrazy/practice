@@ -10,10 +10,11 @@ public class StringUsePriorityQueue {
             for (String arg: args) {
                   pQueue.add(arg);
             }
+            System.out.println(pQueue.contains("abc"));
             while (!pQueue.isEmpty()) {
                   System.out.println(pQueue.poll());
             }
 
-            System.out.println(pQueue.contains("abc"));
+
       }
 }
