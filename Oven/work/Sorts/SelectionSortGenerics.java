@@ -43,4 +43,7 @@ public class SelectionSortGenerics implements Comparable<E> {
             firstsort.selectionSort(arr2);
             System.out.println("After sorting char : "+Arrays.toString(arr2));
       }
+      public int compareTo(E e) {
+            return 1;
+      }
 }
