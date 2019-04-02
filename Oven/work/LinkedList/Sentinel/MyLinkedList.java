@@ -7,7 +7,7 @@ public class MyLinkedList <E> implements MyList<E> {
             private DListNode<E> pointer;
 
             public MyLinkedListIterator () {
-                  pointer = sentinel;
+                  pointer = sentinel.getNext();
             }
             public E next() {
                   E old = pointer.getData();
