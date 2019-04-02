@@ -15,7 +15,7 @@ public class MyLinkedList <E> implements MyList<E> {
                   return old;
             }
             public boolean hasNext() {
-                  return pointer != null;
+                  return pointer != sentinel;
             }
             public void remove() {
                   throw new UnsupportedOperationException();
