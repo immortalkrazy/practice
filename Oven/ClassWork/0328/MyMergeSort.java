@@ -49,6 +49,12 @@ public class MyMergeSort {
 
         }// end of 3rd while loop
 
+        // copy the contents of the temp array into the whole array
+
+        for (int i = 0; i < end - start; i++) {
+             arr[i + start] = temp[i];
+       }
+
     } // end of merge method
 
     private static void mergeSort(int[] arr, int start, int end) {
@@ -78,6 +84,7 @@ public class MyMergeSort {
     public static void main(String[] args) {
 
         int[] arr = {0, 2, 4, 6, 1, 3, 5, 7};
+        int[] arr1 = {3, 8, 9, 5, 7, 3, 0, 10, 4};
 
         // Integer[] arr = new Integer[args.length];
         //
@@ -87,9 +94,9 @@ public class MyMergeSort {
         //
         // }
 
-        mergeSort(arr);
+        mergeSort(arr1);
 
-        System.out.println(Arrays.toString(arr));
+        System.out.println(Arrays.toString(arr1));
 
     }
 
