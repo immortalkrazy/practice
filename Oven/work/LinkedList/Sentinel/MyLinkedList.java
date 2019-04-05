@@ -7,16 +7,23 @@ public class MyLinkedList <E> implements MyList<E> {
         private DListNode<E> pointer;
 
         public MyLinkedListIterator () {
+
             pointer = sentinel.getNext();
+
         }
         public E next() {
+
             E old = pointer.getData();
             pointer = pointer.getNext();
             return old;
+
         }
         public boolean hasNext() {
+
             return pointer != sentinel;
+
         }
+
         public void remove() {
             throw new UnsupportedOperationException();
         }
@@ -72,9 +79,9 @@ public class MyLinkedList <E> implements MyList<E> {
 
         numElements = 0;
         sentinel = new DListNode<E>();
-        sentinel.data = null;
-        sentinel.next = sentinel;
-        sentinel.previous= sentinel;
+        sentinel.setData(null);
+        sentinel.setNext(sentinel);
+        sentinel.setPrevious(sentinel);
 
     }
 
@@ -91,6 +98,7 @@ public class MyLinkedList <E> implements MyList<E> {
         else {
 
             sentinel.next.setPrevious(temp);
+            sentinel.setNext(temp);
             temp.setPrevious(sentinel);
         }
         numElements++;
@@ -101,56 +109,104 @@ public class MyLinkedList <E> implements MyList<E> {
 
         DListNode<E> temp = new DListNode<>(e, null, null);
 
-        if (sentinel.previous == sentinel) {
+        if (sentinel.next == sentinel) {
 
+            sentinel.setNext(temp);
+            temp.setPrevious(sentinel);
 
         }
+        else {
+
+            temp.setPrevious(sentinel.previous);
+            sentinel.previous.setNext(temp);
+            temp.setNext(sentinel);
+        }
+        numElements++;
     }
 
+    public E removeFirst() {
+
+        if (sentinel.next == sentinel) {
+            throw new NoSuchElementException();
+        }
+
+        E answer = sentinel.next.getData();
 
 
+        return answer;
 
+    }
+    // toDo
     public boolean add(E e) {
         return false;
     }
+    // toDo
     public boolean add(int index, E Element) {
         return false;
     }
+    // toDo
     public void clear() {
 
     }
+    // toDo
     public boolean contains(Object obj) {
         return false;
     }
+    // toDo
     public boolean equals(Object obj) {
         return false;
     }
+    // toDo
     public E get(int index) {
         return null;
     }
+    // toDo
     public E set(int index, E element) {
         return null;
     }
+    // toDo
     public int indexOf(Object obj) {
         return -1;
     }
+    // toDo
     public boolean isEmpty() {
         return false;
     }
+    // toDo
     public Iterator<E> iterator() {
         return null;
     }
+    // toDo
     public int lastIndexOf(Object obj){
         return -1;
     }
+    // toDo
     public E remove(int index){
         return null;
     }
+    // toDo
     public boolean remove(Object obj){
         return false;
     }
+
     public int size() {
-        return -1;
+        return numElements;
+    }
+
+    public String toString() {
+
+        StringBuilder sb = new StringBuilder();
+
+        sb.append("[ ");
+
+        for(E e: this) {
+            sb.append(e + " ");
+        }
+
+        sb.append("]");
+
+        return sb.toString();
+
     }
 
 
