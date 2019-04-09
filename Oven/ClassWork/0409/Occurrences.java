@@ -5,7 +5,33 @@ public class Occurrences {
 
     public staic void main(String[] args) {
 
-        Scanner s = new Scanner(new )
+        Scanner s = new Scanner(new File(Occurrences.java));
+
+        Map<Character, Integer> occ;
+        occ = new TreeMap<>();
+
+        while (s.hasNext()) {
+            String next = s.next();
+
+            for (int i = 0; i < next.length(); i++) {
+
+                char curr = next.charAt(i);
+
+                if (occ.containsKey(curr)) {
+                    occ.put(curr.occ.get(curr) + 1);
+                }
+                else {
+                    occ.put(curr, 1);
+                }
+                /*
+                Integer value = occ.get(curr);
+                if(value == null)
+                    occ.put(curr, 1);
+                else
+                    occ.put(curr, value + 1);
+                */
+            }
+        }
     }
 
 
