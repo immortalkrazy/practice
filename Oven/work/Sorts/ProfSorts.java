@@ -25,6 +25,7 @@ public class ProfSorts {
             }
         }
     }
+
     public static void insertionSort (int[] arr) {
 
         int n = arr.length;
@@ -44,7 +45,57 @@ public class ProfSorts {
         }
     }
 
-    /*method used in Selection Sort*/
+    /*method used in Selection Sort
+    findMinimumIndex() is subroutine to selection sort
+    it finds the minimum element in the array*/
+
+    private static int findMinimumIndex (int[] arr, int start, int end) {
+
+        int minIndex = start;
+        int minValue = arr[start];
+
+        for (int i = start + 1; i < end; i++) {
+
+            if (arr[i] < minValue) {
+                minValue = arr[i];
+                minIndex = i;
+            }
+
+        }
+        return minIndex;
+    }
+
+    public static void selectionSort (int[] arr) {
+
+        for (int i = 0; i < arr.length - 1; i++) {
+
+            int minIndex = findMinimumIndex(arr, i , arr.length);
+            swap(arr, minIndex, i);
+
+        }
+    }
+
+    private staic void merge (int[] arr, int start, int mid, int end) {
+
+        int[] temp = new int[end - start];
+
+        int tempIndex = 0;
+        int index1 = start;
+        int index2 = mid;
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
