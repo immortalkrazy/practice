@@ -132,6 +132,13 @@ public class MyLinkedList <E> implements MyList<E> {
 
         E answer = sentinel.next.getData();
 
+        if (sentinel.next.next != sentinel) {
+
+            sentinel.next = sentinel.next.getNext();
+            ////////////////////////////////////////////
+
+        }
+
 
         return answer;
 
