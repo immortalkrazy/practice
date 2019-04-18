@@ -3,9 +3,11 @@ import java.util.*;
 public class MyHashSet<E> implements Iterable<E> {
 
     private ArrayList<LinkedList<E>> theTable;
+    private int numElements;
 
     public MyHashSet() {
         theTable = new ArrayList<>();
+        numElements = 0;
         for (int i = 0; i < 20; i++) {
             theTable.add(new LinkedList<>());
         }
@@ -21,6 +23,7 @@ public class MyHashSet<E> implements Iterable<E> {
 
         theTable.get(index).addFirst(item);
 
+        numElements++;
         return true;
 
     }
@@ -37,6 +40,39 @@ public class MyHashSet<E> implements Iterable<E> {
     }
 
     private class SetIterator implements Iterator<E>  {
-        
+
+    return new SetIterator();
+
+    }
+
+    public int size() {
+        return numElements;
+    }
+
+    public boolean isEmpty() {
+        return numElements == 0;
+    }
+
+    public boolean remove(Object obj) {
+
+        int index = item.hashCode();
+        index %= theTable.size();
+
+        theTable.get(index).
+    }
+
+    public String toString() {
+
+        String result = " ";
+
+        for( E e : this) {
+            result += e + "\n";
+        }
+
+        return result;
+    }
+
+    private class SetIterator implements Iterator<E> {
+        Deque<E> keys
     }
 }
