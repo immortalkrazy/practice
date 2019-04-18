@@ -11,7 +11,7 @@ public class TestMyLinkedList {
         // }
         // print(aList);
         aList.addFirst(10);
-        System.out.println(aList);
+        System.out.println(aList.getLast());
 
 
     }

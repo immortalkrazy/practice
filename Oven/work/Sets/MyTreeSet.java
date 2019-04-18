@@ -1,5 +1,11 @@
 public class MyTreeSet {
 
+    private BSTNode root;
+
+    public MyTreeSet() {
+        root = null;
+    }
+
     private class BSTNode {
 
         private int data;
@@ -44,6 +50,49 @@ public class MyTreeSet {
             return searchRecursive(root.right, key);
         }
     }
+
+    public static BSTNode insert (BSTNode root, int key) {
+
+        if (root == null) {
+
+            //root = new BSTNode();
+            root.data = key;
+            root.left = null;
+            root.right = null;
+
+        }
+        else if (key < root.data) {
+
+            root.left = insert(root.left, key);
+
+        }
+        else {
+
+            root.right = insert(root.right, key);
+
+        }
+
+        return root;
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

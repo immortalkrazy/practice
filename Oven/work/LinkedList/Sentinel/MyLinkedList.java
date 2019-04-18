@@ -85,9 +85,10 @@ public class MyLinkedList <E> implements MyList<E> {
 
     }
 
-    public void addFirst(E e) {
+    public void addFirst(E value) {
 
-        DListNode<E> temp = new DListNode<>(e, null, null);
+        DListNode<E> temp = new DListNode<>(value, null, null);
+        temp.data = value;
 
         if (sentinel.next == sentinel) {
 
@@ -143,6 +144,21 @@ public class MyLinkedList <E> implements MyList<E> {
         return answer;
 
     }
+
+    public E getFirst() {
+       if(sentinel.next == null){
+           throw new NoSuchElementException();
+        }
+
+        return sentinel.next.getData();
+    }
+    public E getLast() {
+        if(sentinel.next == null){
+           throw new NoSuchElementException();
+        }
+        return sentinel.previous.getData();
+    }
+
     // toDo
     public boolean add(E e) {
         return false;

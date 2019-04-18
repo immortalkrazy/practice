@@ -33,6 +33,7 @@ public class UseSet {
         tSet.add(6);
         tSet.add(9);
         tSet.add(10);
+        tSet.insert(55);
 
         hSet.add(1);
         hSet.add(3);
