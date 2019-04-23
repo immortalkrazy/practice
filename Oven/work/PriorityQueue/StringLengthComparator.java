@@ -9,7 +9,6 @@ public class StringLengthComparator implements Comparator<String> {
             if (value == 0) {
                   return str1.compareTo(str2);
             }
-
             else {
                   return value;
             }
