@@ -4,7 +4,7 @@ import java.io.*;
 public class MyHeapQueue<E> implements MyPriorityQueue<E> {
 
     private ArrayList<E> theHeap;
-    private Comprator<E> comp;
+    private Comparator<E> comp;
 
     public MyHeapQueue() {
         this(null);
@@ -31,7 +31,69 @@ public class MyHeapQueue<E> implements MyPriorityQueue<E> {
         return theHeap.get(0);
     }
 
+    public int size() {
+        return theHeap.size();
+    }
+
+    public Iterator<E> iterator() {
+        return theHeap.iterator();
+    }
+
+    public void clear() {
+        theHeap.clear();
+    }
+
+    public boolean contains (Object obj) {
+        return theHeap.contains(obj);
+    }
+
+    public E poll() {
+        swap(theHeap, 0, size()-1);
+        E answer = theHeap.get(size()-1);
+        theHeap.remove(size()-1);
+        minHeapify(0);
+
+        return answer;
+    }
+
+    public boolean remove(Object obj) {
+        theHeap.remove(obj);
+
+        buildHeap();
+        return true;
+    }
+
+    private void minHeapify(int root) {
+        int left = leftChildIndex(root);
+        int right = rightChildIndex(root);
+        int indexOfSmallest;
+
+        if (left < theHeap.size() && myCompareFn(theHeap.get(left), theHeap.get(root)) < 0) {
+            indexOfSmallest = left;
+        }
+        else {
+            indexOfSmallest = root;
+        }
+        if (right < theHeap.size() && myCompareFn(theHeap.get(right), theHeap.get(indexOfSmallest)) < 0) {
+            indexOfSmallest = right;
+        }
+        //if the root is smallest, do nothing.
+        //Otherwise, swap the root with the smaller child and repeat.
+        if(indexOfSmallest != root) {
+            swap(theHeap, indexOfSmallest, root);
+            minHeapify(indexOfSmallest);
+        }
+    }
+
+    private void buildHeap() {
+        for (int i = (theHeap.size() - 1)/2; i > 0; i--) {
+            minHeapify(i);
+        }
+    }
+
     private void bubbleUp(int index) {
+
+        int parent = parentIndex(index);
 
         while(index > 0 && myCompareFn(theHeap.get(index), theHeap.get(parent)) < 0) {
 

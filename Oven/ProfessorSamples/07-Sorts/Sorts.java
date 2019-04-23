@@ -242,6 +242,7 @@ public class Sorts {
             arr[i] = i;
 
         shuffle(arr);
+		System.out.println(Arrays.toString(arr));
 
         bubbleSort(arr);
         System.out.println(Arrays.toString(arr));
@@ -254,6 +255,8 @@ public class Sorts {
         shuffle(arr);
         quicksort(arr);
         System.out.println(Arrays.toString(arr));
+		
         shuffle(arr);
+		System.out.println(Arrays.toString(arr));
     }
 }
