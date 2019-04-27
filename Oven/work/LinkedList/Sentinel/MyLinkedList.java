@@ -8,7 +8,7 @@ public class MyLinkedList <E> implements MyList<E> {
 
         public MyLinkedListIterator () {
 
-            pointer = sentinel;
+            pointer = sentinel.getNext();
 
         }
         public E next() {
@@ -39,6 +39,10 @@ public class MyLinkedList <E> implements MyList<E> {
 
         public DListNode() {
             this(null, null, null);
+        }
+
+        public DListNode(E data) {
+            this (data, null, null);
         }
 
         public DListNode(E data, DListNode<E> previous, DListNode<E> next) {
