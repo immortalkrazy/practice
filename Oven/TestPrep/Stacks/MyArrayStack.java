@@ -2,26 +2,26 @@ import java.util.*;
 
 public class MyArrayStack<E> implements MyStack<E> {
 
-    private ArrayList<E> list = new ArrayList<E>();
+    private ArrayList<E> list;
 
-    // doDo
-    public boolean isEmpty() {
-        return size() == 0;
+    public MyArrayStack() {
+        list = new ArrayList<E>();
     }
 
-    //toDo
+    public boolean isEmpty() {
+        return list.size() == 0;
+    }
+
     public void push(E item) {
         list.add(item);
     }
 
-    //toDo
     public E peek() {
-        return list.get(size() - 1);
+        return list.get(list.size() - 1);
     }
 
-    //toDo
     public E pop() {
-        return list.remove(size() - 1);
+        return list.remove(list.size() - 1);
     }
 
     public String toString() {
@@ -30,7 +30,7 @@ public class MyArrayStack<E> implements MyStack<E> {
 
         sb.append("top\n");
         for (int i = list.size() - 1; i >= 0; i--) {
-            sb.append(list.get(i) + "\n");
+            sb.append(list.get(i) + " ");
         }
         sb.append("bottom");
 
