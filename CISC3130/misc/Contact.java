@@ -6,6 +6,9 @@ public class Contact implements Comparable {
  private String city;
  private String state;
 
+ public Contact() {
+ }
+
  public Contact(String first, String lastname,String phonenumber,String streetaddress,String city, String state ) {
   this.first = first;
   this.lastname = lastname;
@@ -14,17 +17,21 @@ public class Contact implements Comparable {
   this.city= city;
   this.state= state;
  }
+
  public Contact(String first, String lastname, String phonenumber) {
   this.first= first;
   this.lastname=lastname;
   this.phonenumber=phonenumber;
  }
+
  public String getfirst() {
   return first;
  }
+
  public String getlastname() {
   return lastname;
  }
+
  public String getphonenumber() {
   return phonenumber;
  }
@@ -32,6 +39,7 @@ public class Contact implements Comparable {
  public String getstreetaddress() {
   return streetaddress;
  }
+
  public String getcity() {
   return city;
  }
@@ -39,6 +47,7 @@ public class Contact implements Comparable {
  public String getstate() {
   return state;
  }
+
  public void update(String first, String lastname,String phonenumber,String streetaddress,String city, String state) {
   this.first = first;
   this.lastname = lastname;
@@ -62,23 +71,23 @@ public class Contact implements Comparable {
    return resultFirst;
   return resultLast;
  }
+
  public boolean equals(Object obj){
+
   if(obj instanceof Contact) {
    if(first == ((Contact) obj).getfirst() && lastname == ((Contact) obj).getlastname())
     return true;
    else return false;
-
   }
   return false;
+
  }
+
  public String toString() {
-  /* print out first name space last name tabs than phone number than new lines
-   * than streetaddress than new line city comma state
-   */
 
   String s = new String(first + " " + lastname + "\t" + phonenumber + "\n" +
-    streetaddress + "\n" + city + ", " + state );
+    streetaddress + "\n" + city + ", " + state +"\n");
   return s;
-
  }
+
 }

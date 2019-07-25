@@ -2,10 +2,12 @@ public class UsedContact {
   public static void main(String[] args) {
     Contact contact = new Contact("DArien", "Munchkin", "555-5555-5555", "Flatbush", "Brooklyn","NY");
     Contact contact2 = new Contact("Steve", "Zhuravel", "222-2222-2222");
+    Contact c3 = new Contact();
 
     System.out.println(contact.toString());
-    System.out.println();
+    //  System.out.println();
     System.out.println(contact2.toString());
+    System.out.println(c3.toString());
 
     contact.update("Daniel", "Blinder", "111-1111-1111", "Queens NY", "Brooklyn", "NY");
     System.out.println(contact.toString());
