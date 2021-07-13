@@ -41,5 +41,5 @@ public class TestArrayAndLinkedList{
       System.out.print(o + " ");
     }
   }
-
 }
+// just added the comment to check difftool
