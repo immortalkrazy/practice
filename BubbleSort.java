@@ -16,20 +16,21 @@ public class BubbleSort{
 
   }// end of main
 
+// create an array of inetegers
   public static void createIntArray(int[]array){
     Random rng = new Random();
     for (int i = 0; i < array.length; i++){
       array[i] = rng.nextInt(10);
     }
   }
-
+// print the array
   public static void printArray(int[]array){
     for (int i = 0; i < array.length; i++){
       System.out.println("Array element is: " + array[i]);
     }
     System.out.println("-------------------");
   }
-
+// bubble sort code to sort array
   public static void bubbleSortArray(int[] array, int n){
     if (n == 1)
       return;
